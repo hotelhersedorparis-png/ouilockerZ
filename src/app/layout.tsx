@@ -1,37 +1,40 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Manrope, Inter } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
+import { LanguageProvider } from "@/contexts/LanguageContext";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Z.ai Code Scaffold - AI-Powered Development",
-  description: "Modern Next.js scaffold optimized for AI-powered development with Z.ai. Built with TypeScript, Tailwind CSS, and shadcn/ui.",
-  keywords: ["Z.ai", "Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui", "AI development", "React"],
-  authors: [{ name: "Z.ai Team" }],
+  title: "OuiLockers Paris | Premium 24/7 Luggage Storage in Le Marais",
+  description: "Secure 24/7 automated luggage storage in Paris Le Marais. €30/day, up to 4 bags per locker. Book online instantly. Located at 20 Rue Saint-Antoine, 75004 Paris.",
+  keywords: ["OuiLockers", "luggage storage Paris", "consigne bagages Paris", "lockers Paris", "bagages Le Marais", "storage Bastille", "24/7 luggage storage"],
+  authors: [{ name: "OuiLockers by Hôtel Herse d'Or" }],
   icons: {
-    icon: "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
+    icon: "/logo-officiel.png",
   },
   openGraph: {
-    title: "Z.ai Code Scaffold",
-    description: "AI-powered development with modern React stack",
-    url: "https://chat.z.ai",
-    siteName: "Z.ai",
+    title: "OuiLockers Paris | Premium 24/7 Luggage Storage",
+    description: "Secure 24/7 automated luggage storage in Paris Le Marais. Book online instantly and explore Paris hands-free.",
+    url: "https://www.ouilockers.com",
+    siteName: "OuiLockers",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Z.ai Code Scaffold",
-    description: "AI-powered development with modern React stack",
+    title: "OuiLockers Paris | Premium 24/7 Luggage Storage",
+    description: "Secure 24/7 automated luggage storage in Paris Le Marais. Book online instantly.",
   },
 };
 
@@ -41,12 +44,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="dark" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
+        className={`${manrope.variable} ${inter.variable} antialiased bg-background text-foreground`}
       >
-        {children}
-        <Toaster />
+        <LanguageProvider>
+          {children}
+          <Toaster />
+        </LanguageProvider>
       </body>
     </html>
   );

@@ -1,31 +1,35 @@
-'use client'
+'use client';
+
+import Navigation from '@/components/Navigation';
+import Hero from '@/components/sections/Hero';
+import TrustBar from '@/components/sections/TrustBar';
+import Features from '@/components/sections/Features';
+import HowItWorks from '@/components/sections/HowItWorks';
+import Sizes from '@/components/sections/Sizes';
+import Locations from '@/components/sections/Locations';
+import Testimonials from '@/components/sections/Testimonials';
+import FAQ from '@/components/sections/FAQ';
+import CTA from '@/components/sections/CTA';
+import Footer from '@/components/sections/Footer';
 
 export default function Home() {
   return (
-    <div style={{
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      minHeight: '100vh',
-      gap: '2rem',
-      padding: '1rem'
-    }}>
-      <div style={{
-        position: 'relative',
-        width: '6rem',
-        height: '6rem'
-      }}>
-        <img
-          src="/logo.svg"
-          alt="Z.ai Logo"
-          style={{
-            width: '100%',
-            height: '100%',
-            objectFit: 'contain'
-          }}
-        />
-      </div>
+    <div className="min-h-screen flex flex-col bg-background">
+      <Navigation />
+      
+      <main className="flex-grow">
+        <Hero />
+        <TrustBar />
+        <Features />
+        <HowItWorks />
+        <Sizes />
+        <Locations />
+        <Testimonials />
+        <FAQ />
+        <CTA />
+      </main>
+
+      <Footer />
     </div>
-  )
+  );
 }
