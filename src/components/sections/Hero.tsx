@@ -28,6 +28,8 @@ export default function Hero() {
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-br from-white/60 via-white/55 to-slate-100/55" />
+        {/* Teal Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#083445]/80 via-[#083445]/50 to-transparent" />
       </div>
 
       {/* Subtle Background Pattern */}
