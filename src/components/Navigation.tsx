@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Menu, X, Globe, Lock, Package, MapPin, HelpCircle } from 'lucide-react';
+import { Menu, X, Globe, Package, MapPin, HelpCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -11,7 +11,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { useLanguage, Language } from '@/contexts/LanguageContext';
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
 
 export default function Navigation() {
@@ -40,22 +40,19 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200 text-foreground shadow-sm">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-200 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center group">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="relative w-12 h-12"
-            >
+          <Link href="/" className="flex items-center gap-2">
+            <div className="relative w-12 h-12">
               <Image
                 src="/logo-officiel.png"
                 alt="OuiLockers"
                 fill
                 className="object-contain"
               />
-            </motion.div>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -74,17 +71,17 @@ export default function Navigation() {
             {/* Language Switcher */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="sm" className="gap-2 text-slate-600 hover:text-emerald-600 hover:bg-emerald-50">
+                <Button variant="ghost" size="sm" className="gap-2 text-slate-600 hover:text-emerald-600 hover:bg-slate-50">
                   <Globe className="w-4 h-4" />
                   {languages.find((l) => l.code === language)?.label}
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="bg-white border-slate-200 shadow-lg">
+              <DropdownMenuContent align="end" className="bg-white border-slate-200">
                 {languages.map((lang) => (
                   <DropdownMenuItem
                     key={lang.code}
                     onClick={() => setLanguage(lang.code)}
-                    className={`hover:bg-emerald-50 hover:text-emerald-600 ${language === lang.code ? 'bg-emerald-50 text-emerald-600 font-medium' : ''}`}
+                    className={`hover:bg-slate-50 hover:text-emerald-600 ${language === lang.code ? 'bg-slate-50 text-emerald-600 font-medium' : ''}`}
                   >
                     <span className="mr-2">{lang.flag}</span>
                     {lang.label}
@@ -96,7 +93,7 @@ export default function Navigation() {
             {/* CTA Button */}
             <Button
               onClick={() => scrollToSection('locations')}
-              className="bg-emerald-600 text-white hover:bg-emerald-700 font-semibold shadow-md hover:shadow-lg transition-all duration-300"
+              className="bg-emerald-600 text-white hover:bg-emerald-700 font-semibold shadow-sm hover:shadow-md transition-all duration-200"
             >
               {t.nav.bookNow}
             </Button>
@@ -105,7 +102,7 @@ export default function Navigation() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors text-slate-600 hover:text-emerald-600"
+            className="md:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors text-slate-600"
             aria-label="Toggle menu"
           >
             {isOpen ? (
@@ -125,9 +122,9 @@ export default function Navigation() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden border-t border-slate-200 bg-white/95 backdrop-blur-xl shadow-lg"
+            className="md:hidden border-t border-slate-200 bg-white/95 backdrop-blur-sm"
           >
-            <div className="px-4 py-4 space-y-3">
+            <div className="px-4 py-4 space-y-2">
               {navLinks.map((link) => (
                 <button
                   key={link.id}
@@ -152,7 +149,7 @@ export default function Navigation() {
                       className={`flex items-center gap-2 px-4 py-3 rounded-lg transition-colors ${
                         language === lang.code
                           ? 'bg-emerald-600 text-white font-semibold'
-                          : 'hover:bg-slate-50 hover:text-emerald-600 text-slate-600'
+                          : 'hover:bg-slate-50 text-slate-600'
                       }`}
                     >
                       <span>{lang.flag}</span>
@@ -165,7 +162,7 @@ export default function Navigation() {
               {/* CTA Button Mobile */}
               <Button
                 onClick={() => scrollToSection('locations')}
-                className="w-full bg-emerald-600 text-white hover:bg-emerald-700 font-semibold shadow-md hover:shadow-lg transition-all duration-300 mt-4"
+                className="w-full bg-emerald-600 text-white hover:bg-emerald-700 font-semibold shadow-sm hover:shadow-md transition-all duration-200 mt-4"
               >
                 {t.nav.bookNow}
               </Button>
