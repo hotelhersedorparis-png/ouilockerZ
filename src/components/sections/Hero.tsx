@@ -124,63 +124,63 @@ export default function Hero() {
           >
             <div className="relative w-full max-w-md mx-auto">
               {/* Main Card */}
-              <div className="relative bg-white border border-slate-200 rounded-2xl p-8 shadow-lg">
+              <div className="relative bg-white/85 backdrop-blur-xl border border-white/40 rounded-2xl p-8 shadow-2xl">
                 <div className="flex items-center justify-center mb-8">
-                  <div className="w-16 h-16 bg-emerald-50 rounded-xl flex items-center justify-center border border-emerald-200">
-                    <Shield className="w-8 h-8 text-emerald-600" />
+                  <div className="w-16 h-16 bg-emerald-400/20 backdrop-blur-sm rounded-xl flex items-center justify-center border border-emerald-400/30">
+                    <Shield className="w-8 h-8 text-emerald-300" />
                   </div>
                 </div>
 
                 <div className="space-y-4">
-                  <div className="flex items-center gap-4 p-4 bg-slate-50 rounded-lg border border-slate-200 hover:border-emerald-200 transition-colors">
-                    <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center border border-slate-200">
-                      <Clock className="w-5 h-5 text-emerald-600" />
+                  <div className="flex items-center gap-4 p-4 bg-white/60 backdrop-blur-md rounded-lg border border-white/40 hover:bg-white/70 transition-all hover:shadow-lg">
+                    <div className="w-10 h-10 bg-white/80 backdrop-blur-sm rounded-lg flex items-center justify-center border border-white/50">
+                      <Clock className="w-5 h-5 text-emerald-400" />
                     </div>
                     <div>
-                      <p className="font-semibold text-slate-800">24/7 Access</p>
-                      <p className="text-sm text-slate-500">Anytime, anywhere</p>
+                      <p className="font-semibold text-white">24/7 Access</p>
+                      <p className="text-sm text-white/80">Anytime, anywhere</p>
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-4 p-4 bg-slate-50 rounded-lg border border-slate-200 hover:border-emerald-200 transition-colors">
-                    <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center border border-slate-200">
-                      <Shield className="w-5 h-5 text-emerald-600" />
+                  <div className="flex items-center gap-4 p-4 bg-white/60 backdrop-blur-md rounded-lg border border-white/40 hover:bg-white/70 transition-all hover:shadow-lg">
+                    <div className="w-10 h-10 bg-white/80 backdrop-blur-sm rounded-lg flex items-center justify-center border border-white/50">
+                      <Shield className="w-5 h-5 text-emerald-400" />
                     </div>
                     <div>
-                      <p className="font-semibold text-slate-800">Bank-Grade Security</p>
-                      <p className="text-sm text-slate-500">CCTV monitored</p>
+                      <p className="font-semibold text-white">Bank-Grade Security</p>
+                      <p className="text-sm text-white/80">CCTV monitored</p>
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-4 p-4 bg-slate-50 rounded-lg border border-slate-200 hover:border-emerald-200 transition-colors">
-                    <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center border border-slate-200">
-                      <Zap className="w-5 h-5 text-emerald-600" />
+                  <div className="flex items-center gap-4 p-4 bg-white/60 backdrop-blur-md rounded-lg border border-white/40 hover:bg-white/70 transition-all hover:shadow-lg">
+                    <div className="w-10 h-10 bg-white/80 backdrop-blur-sm rounded-lg flex items-center justify-center border border-white/50">
+                      <Zap className="w-5 h-5 text-emerald-400" />
                     </div>
                     <div>
-                      <p className="font-semibold text-slate-800">Instant Booking</p>
-                      <p className="text-sm text-slate-500">No waiting, no queues</p>
+                      <p className="font-semibold text-white">Instant Booking</p>
+                      <p className="text-sm text-white/80">No waiting, no queues</p>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Rating Badge */}
-              <div className="absolute -top-3 -right-3 bg-white border border-slate-200 rounded-xl px-5 py-3 shadow-lg">
+              <div className="absolute -top-3 -right-3 bg-white/90 backdrop-blur-xl border border-white/50 rounded-xl px-5 py-3 shadow-2xl">
                 <div className="flex items-center gap-2">
                   <div className="flex items-center gap-1">
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
                     ))}
                   </div>
-                  <span className="text-sm font-semibold text-slate-700">4.9</span>
+                  <span className="text-sm font-semibold text-slate-800">4.9</span>
                 </div>
               </div>
 
               {/* Capacity Badge */}
-              <div className="absolute -bottom-3 -left-3 bg-white border border-slate-200 rounded-xl px-5 py-3 shadow-lg">
+              <div className="absolute -bottom-3 -left-3 bg-white/90 backdrop-blur-xl border border-white/50 rounded-xl px-5 py-3 shadow-2xl">
                 <div className="flex items-center gap-2">
-                  <Zap className="w-4 h-4 text-emerald-600" />
-                  <span className="text-sm font-semibold text-slate-700">Up to 4 Bags</span>
+                  <Zap className="w-4 h-4 text-emerald-500" />
+                  <span className="text-sm font-semibold text-slate-800">Up to 4 Bags</span>
                 </div>
               </div>
             </div>
