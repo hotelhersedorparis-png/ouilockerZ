@@ -1,32 +1,42 @@
 'use client';
 
-import { Users, Clock, KeyRound, MapPin, ArrowRight } from 'lucide-react';
+import { Wifi, Zap, Coffee, Armchair, Sofa, Shield } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { motion } from 'framer-motion';
 
 export default function Features() {
   const { t } = useLanguage();
 
-  const features = [
+  const amenities = [
     {
-      icon: Users,
-      title: t.features.noQueues,
-      description: t.features.noQueuesDesc,
+      icon: Wifi,
+      title: 'Free WiFi',
+      description: 'High-speed internet connection available free of charge for all our customers.',
     },
     {
-      icon: Clock,
-      title: t.features.flexible,
-      description: t.features.flexibleDesc,
+      icon: Zap,
+      title: 'USB & Power Outlets',
+      description: 'USB ports and power outlets available in abundance to charge your devices.',
     },
     {
-      icon: KeyRound,
-      title: t.features.pinCode,
-      description: t.features.pinCodeDesc,
+      icon: Coffee,
+      title: 'Vending Machines',
+      description: 'Cold drinks, hot drinks and snacks available 24/7.',
     },
     {
-      icon: MapPin,
-      title: t.features.locations,
-      description: t.features.locationsDesc,
+      icon: Armchair,
+      title: 'Small Lounge',
+      description: 'A comfortable space to relax and rest before continuing your journey.',
+    },
+    {
+      icon: Sofa,
+      title: 'Relaxation Area',
+      description: 'Enjoy our fitted-out space for a pleasant break.',
+    },
+    {
+      icon: Shield,
+      title: 'Transparent pricing',
+      description: 'No hidden fees, no surprises. Clear and honest pricing.',
     },
   ];
 
@@ -41,15 +51,18 @@ export default function Features() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-4 text-slate-900">
-            {t.features.title}
+            At your disposal
           </h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            {t.features.subtitle}
+          <p className="text-lg text-slate-600 font-semibold mb-2">
+            Amenities & Services
+          </p>
+          <p className="text-slate-500 max-w-2xl mx-auto">
+            Everything you need for optimal comfort
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {features.map((feature, index) => (
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {amenities.map((amenity, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
@@ -58,18 +71,18 @@ export default function Features() {
               transition={{ duration: 0.4, delay: index * 0.1 }}
               className="group"
             >
-              <div className="card-corporate p-6 h-full hover:border-emerald-300">
+              <div className="card-corporate p-6 h-full hover:border-emerald-300 transition-colors">
                 {/* Icon */}
-                <div className="w-14 h-14 bg-emerald-50 rounded-xl flex items-center justify-center mb-5 border border-emerald-100">
-                  <feature.icon className="w-7 h-7 text-emerald-600" />
+                <div className="w-14 h-14 bg-emerald-50 rounded-xl flex items-center justify-center mb-5 border border-emerald-100 group-hover:bg-emerald-100 transition-colors">
+                  <amenity.icon className="w-7 h-7 text-emerald-600" />
                 </div>
 
                 {/* Content */}
                 <h3 className="text-xl font-heading font-semibold text-slate-900 mb-3 group-hover:text-emerald-600 transition-colors">
-                  {feature.title}
+                  {amenity.title}
                 </h3>
                 <p className="text-slate-600 leading-relaxed">
-                  {feature.description}
+                  {amenity.description}
                 </p>
               </div>
             </motion.div>
