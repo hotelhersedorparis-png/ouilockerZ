@@ -41,10 +41,10 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className="relative py-24 lg:py-32 bg-card overflow-hidden text-foreground">
+    <section className="relative py-24 lg:py-32 bg-slate-50 overflow-hidden text-slate-900">
       {/* Background Effects */}
       <div className="absolute inset-0 pattern-circles opacity-20" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-green/5 rounded-full blur-3xl" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-emerald-500/5 rounded-full blur-3xl" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -70,7 +70,7 @@ export default function Testimonials() {
             <CarouselContent>
               {testimonials.map((testimonial, index) => (
                 <CarouselItem key={index}>
-                  <Card className="border-2 border-brand-green/20 hover:border-brand-green/40 transition-all duration-500 glass-dark-card shadow-premium overflow-hidden">
+                  <Card className="border-2 border-slate-200 hover:border-emerald-300 transition-all duration-500 glass-card shadow-corporate-lg overflow-hidden bg-white">
                     <CardContent className="p-8 lg:p-12">
                       <div className="grid md:grid-cols-3 gap-8 items-center">
                         {/* Image Column */}
@@ -82,7 +82,7 @@ export default function Testimonials() {
                               fill
                               className="object-cover group-hover:scale-110 transition-transform duration-500"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/60 to-transparent" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
                             <div className="absolute bottom-4 left-4 right-4">
                               <div className="flex items-center gap-2 text-white">
                                 <User className="w-5 h-5" />
@@ -100,9 +100,9 @@ export default function Testimonials() {
                             whileInView={{ scale: 1, opacity: 1 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: 0.3 }}
-                            className="w-16 h-16 bg-gradient-to-br from-brand-green/20 to-teal-400/10 rounded-full flex items-center justify-center mb-6 mx-auto md:mx-0 border border-brand-green/30"
+                            className="w-16 h-16 bg-gradient-to-br from-emerald-50 to-teal-50 rounded-full flex items-center justify-center mb-6 mx-auto md:mx-0 border border-emerald-200 shadow-sm"
                           >
-                            <Quote className="w-8 h-8 text-brand-green" />
+                            <Quote className="w-8 h-8 text-emerald-600" />
                           </motion.div>
 
                           {/* Rating Stars */}
@@ -115,18 +115,18 @@ export default function Testimonials() {
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.4, delay: 0.4 + i * 0.1 }}
                               >
-                                <Star className="w-6 h-6 fill-brand-green text-brand-green" />
+                                <Star className="w-6 h-6 fill-emerald-500 text-emerald-500" />
                               </motion.div>
                             ))}
                           </div>
 
                           {/* Quote */}
-                          <blockquote className="text-lg lg:text-xl text-white mb-6 leading-relaxed">
+                          <blockquote className="text-lg lg:text-xl text-slate-700 mb-6 leading-relaxed">
                             "{testimonial.quote}"
                           </blockquote>
 
                           {/* Author */}
-                          <p className="font-bold text-brand-green text-lg">
+                          <p className="font-bold text-emerald-600 text-lg">
                             {testimonial.author}
                           </p>
                         </div>
@@ -136,8 +136,8 @@ export default function Testimonials() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="hidden md:flex border-2 border-brand-green/30 hover:bg-brand-green/20 hover:border-brand-green transition-all duration-300" />
-            <CarouselNext className="hidden md:flex border-2 border-brand-green/30 hover:bg-brand-green/20 hover:border-brand-green transition-all duration-300" />
+            <CarouselPrevious className="hidden md:flex border-2 border-slate-300 hover:bg-emerald-50 hover:border-emerald-400 transition-all duration-300" />
+            <CarouselNext className="hidden md:flex border-2 border-slate-300 hover:bg-emerald-50 hover:border-emerald-400 transition-all duration-300" />
           </Carousel>
         </motion.div>
 
@@ -157,10 +157,10 @@ export default function Testimonials() {
             <motion.div
               key={index}
               whileHover={{ scale: 1.05 }}
-              className="flex items-center gap-3 px-6 py-3 glass-dark-card rounded-full border border-brand-green/20"
+              className="flex items-center gap-3 px-6 py-3 glass bg-white rounded-full border border-slate-200 shadow-sm"
             >
               <span className="text-2xl">{item.icon}</span>
-              <span className="font-semibold text-white">{item.label}</span>
+              <span className="font-semibold text-slate-800">{item.label}</span>
             </motion.div>
           ))}
         </motion.div>

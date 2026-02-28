@@ -92,11 +92,13 @@ const config: Config = {
                         xs: '2px',
                 },
                 boxShadow: {
-                        'glow-green': '0 0 30px rgba(16, 185, 129, 0.25), 0 0 60px rgba(16, 185, 129, 0.1)',
-                        'glow-green-sm': '0 0 15px rgba(16, 185, 129, 0.35)',
-                        'glass': '0 8px 32px rgba(0, 0, 0, 0.1)',
-                        'premium': '0 20px 40px rgba(0, 0, 0, 0.15)',
-                        'card': '0 4px 24px rgba(0, 0, 0, 0.08)',
+                        'glow-green': '0 0 20px rgba(16, 185, 129, 0.15), 0 0 40px rgba(16, 185, 129, 0.08)',
+                        'glow-green-sm': '0 0 12px rgba(16, 185, 129, 0.2)',
+                        'glass': '0 4px 24px rgba(0, 0, 0, 0.08)',
+                        'premium': '0 8px 40px rgba(0, 0, 0, 0.1)',
+                        'card': '0 2px 16px rgba(0, 0, 0, 0.06)',
+                        'corporate': '0 1px 3px rgba(0, 0, 0, 0.05), 0 10px 20px rgba(0, 0, 0, 0.03)',
+                        'corporate-lg': '0 4px 6px rgba(0, 0, 0, 0.05), 0 20px 40px rgba(0, 0, 0, 0.05)',
                 },
                 transitionTimingFunction: {
                         'bounce-smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',

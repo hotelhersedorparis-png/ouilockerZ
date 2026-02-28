@@ -63,10 +63,10 @@ export default function Locations() {
   };
 
   return (
-    <section id="locations" className="relative py-24 lg:py-32 bg-card overflow-hidden text-foreground">
+    <section id="locations" className="relative py-24 lg:py-32 bg-white overflow-hidden text-slate-900">
       {/* Background Effects */}
-      <div className="absolute inset-0 pattern-grid-dark opacity-10" />
-      <div className="absolute top-1/4 right-0 w-96 h-96 bg-brand-green/5 rounded-full blur-3xl" />
+      <div className="absolute inset-0 pattern-grid opacity-20" />
+      <div className="absolute top-1/4 right-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -79,7 +79,7 @@ export default function Locations() {
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold mb-4">
             <span className="text-gradient">{t.locations.title}</span>
           </h2>
-          <p className="text-lg text-gray-400">
+          <p className="text-lg text-slate-600">
             {t.locations.subtitle}
           </p>
         </motion.div>
@@ -90,7 +90,7 @@ export default function Locations() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-12 bg-background border-2 border-brand-green/20 rounded-3xl overflow-hidden"
+          className="mb-12 bg-white border-2 border-slate-200 rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
         >
           <div className="aspect-video relative">
             <Image
@@ -99,13 +99,13 @@ export default function Locations() {
               fill
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 to-transparent flex items-end">
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent flex items-end">
               <div className="p-8">
-                <div className="flex items-center gap-2 text-brand-green mb-2">
+                <div className="flex items-center gap-2 text-emerald-400 mb-2">
                   <MapPin className="w-5 h-5" />
-                  <span className="font-semibold">20 Rue Saint-Antoine, 75004 Paris</span>
+                  <span className="font-semibold text-white">20 Rue Saint-Antoine, 75004 Paris</span>
                 </div>
-                <p className="text-gray-300">Located in the heart of Le Marais</p>
+                <p className="text-slate-200">Located in the heart of Le Marais</p>
               </div>
             </div>
           </div>
@@ -122,7 +122,7 @@ export default function Locations() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="h-full"
             >
-              <div className="h-full bg-background border-2 border-white/10 hover:border-brand-green/50 transition-all duration-300 hover:shadow-glow-green rounded-3xl p-6 overflow-hidden">
+              <div className="h-full bg-white border-2 border-slate-200 hover:border-emerald-300 transition-all duration-300 hover:shadow-corporate-lg rounded-3xl p-6 overflow-hidden">
                 {/* Location Image */}
                 {location.image && (
                   <div className="relative aspect-video rounded-xl overflow-hidden mb-4">
@@ -141,38 +141,38 @@ export default function Locations() {
                     variant="default"
                     className={`${
                       location.status === 'open'
-                        ? 'bg-brand-green text-white'
+                        ? 'bg-emerald-600 text-white hover:bg-emerald-700'
                         : ''
                     }`}
                   >
-                    <span className="w-2 h-2 rounded-full bg-current mr-2 animate-pulse" />
+                    <span className="w-2 h-2 rounded-full bg-white mr-2 animate-pulse" />
                     {t.locations.open}
                   </Badge>
                   {location.rating && (
-                    <div className="flex items-center gap-1 text-sm text-gray-400">
-                      <Star className="w-4 h-4 fill-brand-green text-brand-green" />
+                    <div className="flex items-center gap-1 text-sm text-slate-600">
+                      <Star className="w-4 h-4 fill-emerald-500 text-emerald-500" />
                       {location.rating}
                     </div>
                   )}
                 </div>
 
                 {/* Location Info */}
-                <h3 className="text-xl font-heading font-bold text-white mb-2">
+                <h3 className="text-xl font-heading font-bold text-slate-900 mb-2">
                   {location.name}
                 </h3>
-                <p className="text-gray-400 mb-4 text-sm">
+                <p className="text-slate-600 mb-4 text-sm">
                   {location.address}
                 </p>
 
                 {/* Hours */}
-                <div className="flex items-center gap-2 text-sm text-gray-500 mb-4">
-                  <Clock className="w-4 h-4 text-brand-green" />
+                <div className="flex items-center gap-2 text-sm text-slate-500 mb-4">
+                  <Clock className="w-4 h-4 text-emerald-600" />
                   {location.hours}
                 </div>
 
                 {/* Distance */}
                 {location.distance && (
-                  <div className="flex items-center gap-2 text-sm text-gray-500 mb-6">
+                  <div className="flex items-center gap-2 text-sm text-slate-500 mb-6">
                     <Navigation className="w-4 h-4" />
                     {location.distance}
                   </div>
@@ -181,7 +181,7 @@ export default function Locations() {
                 {/* Book Button */}
                 <Button
                   onClick={() => handleBookAtLocation(location.deviceId)}
-                  className="w-full bg-gradient-to-r from-brand-green to-teal-500 text-white hover:scale-105 font-bold rounded-xl transition-all duration-300 shadow-lg group-hover:shadow-glow-green-sm border-2 border-brand-green/30"
+                  className="w-full bg-gradient-to-r from-emerald-600 to-teal-500 text-white hover:scale-105 font-bold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl border-2 border-emerald-600/30"
                 >
                   {t.locations.bookAtLocation}
                 </Button>

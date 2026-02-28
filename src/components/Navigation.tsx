@@ -40,12 +40,12 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-brand-dark/80 backdrop-blur-lg border-b border-brand-green/20 text-foreground">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200 text-foreground shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
-            <motion.div 
+            <motion.div
               whileHover={{ scale: 1.05 }}
               className="relative w-10 h-10"
             >
@@ -56,7 +56,7 @@ export default function Navigation() {
                 className="object-contain"
               />
             </motion.div>
-            <span className="text-xl font-heading font-bold text-white">
+            <span className="text-xl font-heading font-bold text-slate-900">
               Oui Lockers
             </span>
           </Link>
@@ -67,7 +67,7 @@ export default function Navigation() {
               <button
                 key={link.id}
                 onClick={() => scrollToSection(link.id)}
-                className="flex items-center gap-2 text-sm font-medium text-gray-300 hover:text-brand-green transition-colors"
+                className="flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors"
               >
                 <link.icon className="w-4 h-4" />
                 {link.label}
@@ -77,17 +77,17 @@ export default function Navigation() {
             {/* Language Switcher */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="sm" className="gap-2 text-gray-300 hover:text-brand-green hover:bg-brand-green/10">
+                <Button variant="ghost" size="sm" className="gap-2 text-slate-600 hover:text-emerald-600 hover:bg-emerald-50">
                   <Globe className="w-4 h-4" />
                   {languages.find((l) => l.code === language)?.label}
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="bg-background border-brand-green/20">
+              <DropdownMenuContent align="end" className="bg-white border-slate-200 shadow-lg">
                 {languages.map((lang) => (
                   <DropdownMenuItem
                     key={lang.code}
                     onClick={() => setLanguage(lang.code)}
-                    className={`hover:bg-brand-green/10 hover:text-brand-green ${language === lang.code ? 'bg-brand-green/10 text-brand-green' : ''}`}
+                    className={`hover:bg-emerald-50 hover:text-emerald-600 ${language === lang.code ? 'bg-emerald-50 text-emerald-600 font-medium' : ''}`}
                   >
                     <span className="mr-2">{lang.flag}</span>
                     {lang.label}
@@ -99,7 +99,7 @@ export default function Navigation() {
             {/* CTA Button */}
             <Button
               onClick={() => scrollToSection('locations')}
-              className="bg-brand-green text-white hover:bg-brand-green-light font-semibold hover:shadow-glow-green-sm transition-all duration-300"
+              className="bg-emerald-600 text-white hover:bg-emerald-700 font-semibold shadow-md hover:shadow-lg transition-all duration-300"
             >
               {t.nav.bookNow}
             </Button>
@@ -108,7 +108,7 @@ export default function Navigation() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-brand-green/10 transition-colors text-gray-300 hover:text-brand-green"
+            className="md:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors text-slate-600 hover:text-emerald-600"
             aria-label="Toggle menu"
           >
             {isOpen ? (
@@ -128,23 +128,23 @@ export default function Navigation() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden border-t border-brand-green/20 bg-background/95 backdrop-blur-lg"
+            className="md:hidden border-t border-slate-200 bg-white/95 backdrop-blur-xl shadow-lg"
           >
             <div className="px-4 py-4 space-y-3">
               {navLinks.map((link) => (
                 <button
                   key={link.id}
                   onClick={() => scrollToSection(link.id)}
-                  className="flex items-center gap-3 w-full px-4 py-3 rounded-lg hover:bg-brand-green/10 transition-colors text-left"
+                  className="flex items-center gap-3 w-full px-4 py-3 rounded-lg hover:bg-slate-50 transition-colors text-left"
                 >
-                  <link.icon className="w-5 h-5 text-brand-green" />
-                  <span className="font-medium">{link.label}</span>
+                  <link.icon className="w-5 h-5 text-emerald-600" />
+                  <span className="font-medium text-slate-700">{link.label}</span>
                 </button>
               ))}
 
               {/* Language Switcher Mobile */}
-              <div className="pt-3 border-t border-brand-green/20">
-                <p className="px-4 py-2 text-sm text-gray-400 font-medium">
+              <div className="pt-3 border-t border-slate-200">
+                <p className="px-4 py-2 text-sm text-slate-500 font-medium">
                   Language
                 </p>
                 <div className="flex flex-col gap-1">
@@ -154,8 +154,8 @@ export default function Navigation() {
                       onClick={() => setLanguage(lang.code)}
                       className={`flex items-center gap-2 px-4 py-3 rounded-lg transition-colors ${
                         language === lang.code
-                          ? 'bg-brand-green text-white font-semibold'
-                          : 'hover:bg-brand-green/10 hover:text-brand-green text-gray-300'
+                          ? 'bg-emerald-600 text-white font-semibold'
+                          : 'hover:bg-slate-50 hover:text-emerald-600 text-slate-600'
                       }`}
                     >
                       <span>{lang.flag}</span>
@@ -168,7 +168,7 @@ export default function Navigation() {
               {/* CTA Button Mobile */}
               <Button
                 onClick={() => scrollToSection('locations')}
-                className="w-full bg-brand-green text-white hover:bg-brand-green-light font-semibold hover:shadow-glow-green-sm transition-all duration-300 mt-4"
+                className="w-full bg-emerald-600 text-white hover:bg-emerald-700 font-semibold shadow-md hover:shadow-lg transition-all duration-300 mt-4"
               >
                 {t.nav.bookNow}
               </Button>

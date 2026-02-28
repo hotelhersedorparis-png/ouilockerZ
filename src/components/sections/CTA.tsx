@@ -16,11 +16,11 @@ export default function CTA() {
   };
 
   return (
-    <section className="py-20 lg:py-32 bg-brand-dark relative overflow-hidden text-white">
+    <section className="py-20 lg:py-32 bg-slate-900 relative overflow-hidden text-white">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(16,185,129,0.15),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(16,185,129,0.1),transparent_50%]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(16,185,129,0.1),transparent_50%)]" />
       </div>
 
       {/* Grid Pattern */}
@@ -36,13 +36,13 @@ export default function CTA() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-white mb-6">
             {t.cta.headline}
           </h2>
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
             {t.cta.text}
           </p>
           <Button
             onClick={scrollToLocations}
             size="lg"
-            className="relative overflow-hidden bg-gradient-to-r from-brand-green via-brand-green-light to-brand-green bg-[length:200%_100%] text-white hover:scale-105 font-bold text-lg px-10 py-7 rounded-2xl glow-green-hover transition-all duration-300 group border-2 border-brand-green/50 shadow-2xl"
+            className="relative overflow-hidden bg-gradient-to-r from-emerald-600 via-emerald-500 to-emerald-600 bg-[length:200%_100%] text-white hover:scale-105 font-bold text-lg px-10 py-7 rounded-2xl transition-all duration-300 group border-2 border-emerald-600/30 shadow-lg hover:shadow-xl"
           >
             <span className="relative z-10 flex items-center gap-2">
               {t.cta.button}
