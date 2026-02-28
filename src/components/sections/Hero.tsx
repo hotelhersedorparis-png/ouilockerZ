@@ -49,9 +49,9 @@ export default function Hero() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-700 mb-6 shadow-sm"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-600/90 backdrop-blur-sm border border-emerald-500 text-white mb-6 shadow-lg"
             >
-              <MapPin className="w-4 h-4 text-emerald-600" />
+              <MapPin className="w-4 h-4 text-white" />
               <span className="text-sm font-semibold">Le Marais, Paris</span>
             </motion.div>
 
@@ -60,27 +60,27 @@ export default function Hero() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.15 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-700 mb-6 ml-2 shadow-sm"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/95 backdrop-blur-sm border border-amber-300 text-slate-900 mb-6 ml-2 shadow-lg"
             >
-              <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
-              <span className="text-sm font-semibold">4.9/5 Rating</span>
+              <Star className="w-4 h-4 fill-amber-500 text-amber-500" />
+              <span className="text-sm font-bold">4.9/5 Rating</span>
             </motion.div>
 
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold leading-tight mb-6"
+              className="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold leading-tight mb-6"
             >
-              <span className="text-slate-900 block mb-2">Premium 24/7</span>
-              <span className="text-gradient">Luggage Storage</span>
+              <span className="text-white block mb-2 drop-shadow-lg">Premium 24/7</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-300 drop-shadow-lg">Luggage Storage</span>
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
+              className="text-lg text-white/95 font-medium mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed drop-shadow-md"
             >
               Secure automated lockers in the heart of Paris Le Marais. Drop your bags and explore the city hands-free. €30/day, up to 4 bags per locker.
             </motion.p>
@@ -108,9 +108,9 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.5 }}
-              className="flex items-center justify-center lg:justify-start gap-2 text-slate-500 text-sm"
+              className="flex items-center justify-center lg:justify-start gap-2 text-white/90 font-medium text-sm drop-shadow-md"
             >
-              <MapPin className="w-4 h-4 text-emerald-600" />
+              <MapPin className="w-4 h-4 text-emerald-400" />
               <span>20 Rue Saint-Antoine, 75004 Paris</span>
             </motion.div>
           </motion.div>
