@@ -17,17 +17,17 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-slate-50 overflow-hidden text-slate-900">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden text-slate-900">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <Image
           src="/images/hero-marais.jpg"
           alt="OuiLockers Paris Le Marais"
           fill
-          className="object-cover opacity-30"
+          className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-white/95 via-slate-50/95 to-slate-100/95" />
+        <div className="absolute inset-0 bg-gradient-to-br from-white/85 via-slate-50/80 to-slate-100/75" />
       </div>
 
       {/* Premium Background Layers */}

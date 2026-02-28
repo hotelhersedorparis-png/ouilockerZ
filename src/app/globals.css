@@ -3,72 +3,80 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Glassmorphism Utilities - Light Corporate Theme */
+/* Corporate Utilities - Clean White Theme */
 @layer utilities {
   .glass {
-    @apply bg-white/70 backdrop-blur-xl border border-slate-200/60 shadow-sm;
+    @apply bg-white border border-slate-200 shadow-sm;
   }
   .glass-dark {
-    @apply bg-slate-900/60 backdrop-blur-xl border border-slate-700/50;
+    @apply bg-slate-900/95 border border-slate-700/50;
   }
   .glass-card {
-    @apply bg-white/90 backdrop-blur-lg border border-slate-200/60 shadow-md hover:shadow-xl transition-shadow duration-300;
+    @apply bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow duration-200;
   }
   .glass-dark-card {
-    @apply bg-slate-800/80 backdrop-blur-lg border border-slate-700/50 shadow-lg;
+    @apply bg-slate-800/95 border border-slate-700/50 shadow-md;
   }
   .glass-button {
-    @apply bg-white/80 backdrop-blur-md border border-slate-300/60 hover:bg-white/95 hover:shadow-md transition-all duration-200;
+    @apply bg-white border border-slate-300 hover:bg-slate-50 hover:shadow-sm transition-all duration-150;
   }
   .glass-hero {
-    @apply bg-white/95 backdrop-blur-2xl border border-slate-200/50 shadow-xl;
+    @apply bg-white border border-slate-200 shadow-md;
+  }
+  .section-light {
+    @apply bg-white;
+  }
+  .section-gray {
+    @apply bg-slate-50;
+  }
+  .card-corporate {
+    @apply bg-white border border-slate-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200;
+  }
+  .card-corporate-lg {
+    @apply bg-white border border-slate-200 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-200;
   }
 }
 
 /* Premium Gradients - Corporate Light Theme */
 @layer utilities {
   .gradient-brand {
-    background: linear-gradient(135deg, #059669 0%, #10b981 50%, #059669 100%);
+    background: linear-gradient(135deg, #059669 0%, #10b981 100%);
   }
   .gradient-brand-dark {
-    background: linear-gradient(135deg, #059669 0%, #10b981 50%, #059669 100%);
+    background: linear-gradient(135deg, #059669 0%, #10b981 100%);
   }
   .gradient-corporate {
     background: linear-gradient(135deg, #0f172a 0%, #334155 100%);
   }
   .gradient-mesh {
     background:
-      radial-gradient(at 40% 20%, rgba(16, 185, 129, 0.05) 0px, transparent 50%),
-      radial-gradient(at 80% 0%, rgba(16, 185, 129, 0.03) 0px, transparent 50%),
-      radial-gradient(at 0% 50%, rgba(16, 185, 129, 0.03) 0px, transparent 50%),
-      radial-gradient(at 80% 50%, rgba(16, 185, 129, 0.02) 0px, transparent 50%),
-      radial-gradient(at 0% 100%, rgba(16, 185, 129, 0.03) 0px, transparent 50%),
-      radial-gradient(at 80% 100%, rgba(16, 185, 129, 0.02) 0px, transparent 50%);
+      radial-gradient(at 40% 20%, rgba(16, 185, 129, 0.02) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, rgba(16, 185, 129, 0.01) 0px, transparent 50%);
   }
   .gradient-glow {
-    background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.04) 0%, transparent 70%);
   }
   .gradient-glow-hover:hover {
-    background: radial-gradient(circle, rgba(16, 185, 129, 0.12) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.06) 0%, transparent 70%);
   }
 }
 
 /* Glow Effects - Subtle Corporate Theme */
 @layer utilities {
   .glow-green {
-    box-shadow: 0 0 20px rgba(16, 185, 129, 0.15), 0 0 40px rgba(16, 185, 129, 0.08);
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.1), 0 0 20px rgba(16, 185, 129, 0.05);
   }
   .glow-green-sm {
-    box-shadow: 0 0 12px rgba(16, 185, 129, 0.2);
+    box-shadow: 0 0 6px rgba(16, 185, 129, 0.1);
   }
   .glow-green-hover:hover {
-    box-shadow: 0 0 20px rgba(16, 185, 129, 0.25), 0 0 40px rgba(16, 185, 129, 0.1);
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.15), 0 0 20px rgba(16, 185, 129, 0.08);
   }
   .shadow-corporate {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 10px 20px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 4px 8px rgba(0, 0, 0, 0.02);
   }
   .shadow-corporate-lg {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 20px 40px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04), 0 8px 16px rgba(0, 0, 0, 0.03);
   }
 }
 
@@ -76,23 +84,23 @@
 @layer utilities {
   .pattern-grid {
     background-image:
-      linear-gradient(rgba(148, 163, 184, 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(148, 163, 184, 0.04) 1px, transparent 1px);
-    background-size: 60px 60px;
+      linear-gradient(rgba(148, 163, 184, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148, 163, 184, 0.03) 1px, transparent 1px);
+    background-size: 80px 80px;
   }
   .pattern-grid-dark {
     background-image:
-      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-    background-size: 60px 60px;
+      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 80px 80px;
   }
   .pattern-dots {
-    background-image: radial-gradient(rgba(16, 185, 129, 0.06) 1px, transparent 1px);
-    background-size: 20px 20px;
+    background-image: radial-gradient(rgba(16, 185, 129, 0.04) 1px, transparent 1px);
+    background-size: 24px 24px;
   }
   .pattern-circles {
-    background-image: radial-gradient(circle at 1px 1px, rgba(16, 185, 129, 0.04) 1px, transparent 0);
-    background-size: 40px 40px;
+    background-image: radial-gradient(circle at 1px 1px, rgba(16, 185, 129, 0.03) 1px, transparent 0);
+    background-size: 48px 48px;
   }
 }
 
@@ -145,37 +153,37 @@
 @layer utilities {
   .scrollbar-premium {
     scrollbar-width: thin;
-    scrollbar-color: rgba(16, 185, 129, 0.3) transparent;
+    scrollbar-color: rgba(16, 185, 129, 0.2) transparent;
   }
   .scrollbar-premium::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
   }
   .scrollbar-premium::-webkit-scrollbar-track {
     background: transparent;
   }
   .scrollbar-premium::-webkit-scrollbar-thumb {
-    background: rgba(16, 185, 129, 0.3);
-    border-radius: 4px;
+    background: rgba(16, 185, 129, 0.2);
+    border-radius: 3px;
   }
   .scrollbar-premium::-webkit-scrollbar-thumb:hover {
-    background: rgba(16, 185, 129, 0.5);
+    background: rgba(16, 185, 129, 0.35);
   }
   .scrollbar-corporate {
     scrollbar-width: thin;
-    scrollbar-color: rgba(15, 23, 42, 0.15) transparent;
+    scrollbar-color: rgba(15, 23, 42, 0.12) transparent;
   }
   .scrollbar-corporate::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
   }
   .scrollbar-corporate::-webkit-scrollbar-track {
     background: transparent;
   }
   .scrollbar-corporate::-webkit-scrollbar-thumb {
-    background: rgba(15, 23, 42, 0.15);
-    border-radius: 4px;
+    background: rgba(15, 23, 42, 0.12);
+    border-radius: 3px;
   }
   .scrollbar-corporate::-webkit-scrollbar-thumb:hover {
-    background: rgba(15, 23, 42, 0.25);
+    background: rgba(15, 23, 42, 0.2);
   }
 }
 
@@ -202,15 +210,15 @@
   --popover-foreground: #0f172a;
   --primary: #059669;
   --primary-foreground: #ffffff;
-  --secondary: #f1f5f9;
+  --secondary: #f8fafc;
   --secondary-foreground: #0f172a;
-  --muted: #f8fafc;
+  --muted: #f1f5f9;
   --muted-foreground: #64748b;
-  --accent: #ecfdf5;
+  --accent: #f0fdf4;
   --accent-foreground: #0f172a;
   --destructive: #ef4444;
-  --border: #e2e8f0;
-  --input: #e2e8f0;
+  --border: #e5e7eb;
+  --input: #e5e7eb;
   --ring: #059669;
   --chart-1: #059669;
   --chart-2: #10b981;

@@ -44,10 +44,10 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
+          <Link href="/" className="flex items-center group">
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="relative w-10 h-10"
+              className="relative w-12 h-12"
             >
               <Image
                 src="/logo-officiel.png"
@@ -56,9 +56,6 @@ export default function Navigation() {
                 className="object-contain"
               />
             </motion.div>
-            <span className="text-xl font-heading font-bold text-slate-900">
-              Oui Lockers
-            </span>
           </Link>
 
           {/* Desktop Navigation */}
