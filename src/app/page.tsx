@@ -11,6 +11,7 @@ import Testimonials from '@/components/sections/Testimonials';
 import FAQ from '@/components/sections/FAQ';
 import CTA from '@/components/sections/CTA';
 import Footer from '@/components/sections/Footer';
+import CallWidget from '@/components/CallWidget';
 
 export default function Home() {
   return (
@@ -30,6 +31,7 @@ export default function Home() {
       </main>
 
       <Footer />
+      <CallWidget />
     </div>
   );
 }
