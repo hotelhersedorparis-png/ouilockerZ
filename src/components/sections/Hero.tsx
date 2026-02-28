@@ -134,31 +134,31 @@ export default function Hero() {
                 <div className="space-y-4">
                   <div className="flex items-center gap-4 p-4 bg-white/60 backdrop-blur-md rounded-lg border border-white/40 hover:bg-white/70 transition-all hover:shadow-lg">
                     <div className="w-10 h-10 bg-white/80 backdrop-blur-sm rounded-lg flex items-center justify-center border border-white/50">
-                      <Clock className="w-5 h-5 text-emerald-400" />
+                      <Clock className="w-5 h-5 text-emerald-600" />
                     </div>
                     <div>
-                      <p className="font-semibold text-white">24/7 Access</p>
-                      <p className="text-sm text-white/80">Anytime, anywhere</p>
+                      <p className="font-semibold text-slate-900">24/7 Access</p>
+                      <p className="text-sm text-slate-600">Anytime, anywhere</p>
                     </div>
                   </div>
 
                   <div className="flex items-center gap-4 p-4 bg-white/60 backdrop-blur-md rounded-lg border border-white/40 hover:bg-white/70 transition-all hover:shadow-lg">
                     <div className="w-10 h-10 bg-white/80 backdrop-blur-sm rounded-lg flex items-center justify-center border border-white/50">
-                      <Shield className="w-5 h-5 text-emerald-400" />
+                      <Shield className="w-5 h-5 text-emerald-600" />
                     </div>
                     <div>
-                      <p className="font-semibold text-white">Bank-Grade Security</p>
-                      <p className="text-sm text-white/80">CCTV monitored</p>
+                      <p className="font-semibold text-slate-900">Bank-Grade Security</p>
+                      <p className="text-sm text-slate-600">CCTV monitored</p>
                     </div>
                   </div>
 
                   <div className="flex items-center gap-4 p-4 bg-white/60 backdrop-blur-md rounded-lg border border-white/40 hover:bg-white/70 transition-all hover:shadow-lg">
                     <div className="w-10 h-10 bg-white/80 backdrop-blur-sm rounded-lg flex items-center justify-center border border-white/50">
-                      <Zap className="w-5 h-5 text-emerald-400" />
+                      <Zap className="w-5 h-5 text-emerald-600" />
                     </div>
                     <div>
-                      <p className="font-semibold text-white">Instant Booking</p>
-                      <p className="text-sm text-white/80">No waiting, no queues</p>
+                      <p className="font-semibold text-slate-900">Instant Booking</p>
+                      <p className="text-sm text-slate-600">No waiting, no queues</p>
                     </div>
                   </div>
                 </div>

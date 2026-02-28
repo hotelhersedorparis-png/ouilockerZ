@@ -1,6 +1,6 @@
 'use client';
 
-import { MapPin, Navigation, Clock, Star } from 'lucide-react';
+import { MapPin, Navigation, Clock, Star, Phone, Mail, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -17,6 +17,11 @@ interface Location {
   status: 'open' | 'closed';
   image?: string;
   rating?: number;
+  reviews?: number;
+  phone?: string;
+  email?: string;
+  coordinates?: { lat: string; lng: string };
+  priceRange?: string;
 }
 
 export default function Locations() {
@@ -26,35 +31,50 @@ export default function Locations() {
     {
       id: '1',
       name: 'Le Marais - Saint-Antoine',
-      address: '20 Rue Saint-Antoine, 75004 Paris',
+      address: '20 Rue Saint-Antoine, 75004 Paris, France',
       deviceId: '2100018368',
-      distance: '0.1 km from center',
-      hours: '24/7',
+      distance: 'Heart of Le Marais',
+      hours: '24/7 • Open Now',
       status: 'open',
       image: '/images/photo-facade.jpg',
       rating: 4.9,
+      reviews: 250,
+      phone: '+33 1 85 73 72 47',
+      email: 'ouilockers@hotel-herse-dor.com',
+      coordinates: { lat: '48.8534', lng: '2.3652' },
+      priceRange: '€€/day',
     },
     {
       id: '2',
       name: 'Bastille Station',
-      address: '456 Railway Avenue, Paris',
+      address: 'Place de la Bastille, 75004 Paris, France',
       deviceId: '2100018369',
-      distance: '0.5 km away',
-      hours: '24/7',
+      distance: '5 min walk',
+      hours: '24/7 • Open Now',
       status: 'open',
       image: '/images/photo-interieur.jpg',
       rating: 4.8,
+      reviews: 180,
+      phone: '+33 1 85 73 72 47',
+      email: 'ouilockers@hotel-herse-dor.com',
+      coordinates: { lat: '48.8534', lng: '2.3652' },
+      priceRange: '€€/day',
     },
     {
       id: '3',
-      name: 'Airport Terminal',
-      address: '789 Airport Boulevard, Paris',
+      name: 'City Center',
+      address: 'Central Paris, France',
       deviceId: '2100018370',
-      distance: '2.1 km away',
-      hours: '24/7',
+      distance: 'Nearby',
+      hours: '24/7 • Open Now',
       status: 'open',
       image: '/images/hero-lockers.png',
       rating: 4.7,
+      reviews: 150,
+      phone: '+33 1 85 73 72 47',
+      email: 'ouilockers@hotel-herse-dor.com',
+      coordinates: { lat: '48.8566', lng: '2.3522' },
+      priceRange: '€€/day',
     },
   ];
 
@@ -73,10 +93,10 @@ export default function Locations() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-4 text-slate-900">
-            {t.locations.title}
+            Our Location
           </h2>
-          <p className="text-lg text-slate-600">
-            {t.locations.subtitle}
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+            Premium luggage storage in the heart of Paris Le Marais. 24/7 access, secure automated lockers.
           </p>
         </motion.div>
 
@@ -101,7 +121,16 @@ export default function Locations() {
                   <MapPin className="w-5 h-5" />
                   <span className="font-semibold text-white">20 Rue Saint-Antoine, 75004 Paris</span>
                 </div>
-                <p className="text-slate-200">Located in the heart of Le Marais</p>
+                <div className="flex items-center gap-4 text-white/90">
+                  <div className="flex items-center gap-1">
+                    <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
+                    <span className="font-medium">4.9/5 (250 reviews)</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <Clock className="w-4 h-4" />
+                    <span className="font-medium">24/7 Open</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -131,8 +160,8 @@ export default function Locations() {
                   </div>
                 )}
 
-                {/* Status Badge */}
-                <div className="flex items-center justify-between mb-4">
+                {/* Status & Rating */}
+                <div className="flex items-center justify-between mb-3">
                   <Badge
                     variant="default"
                     className={`${
@@ -142,12 +171,15 @@ export default function Locations() {
                     }`}
                   >
                     <span className="w-2 h-2 rounded-full bg-white mr-2 animate-pulse" />
-                    {t.locations.open}
+                    Open
                   </Badge>
                   {location.rating && (
-                    <div className="flex items-center gap-1 text-sm text-slate-600">
-                      <Star className="w-4 h-4 fill-emerald-500 text-emerald-500" />
-                      {location.rating}
+                    <div className="flex items-center gap-1 text-sm">
+                      <Star className="w-4 h-4 fill-amber-500 text-amber-500" />
+                      <span className="font-medium text-slate-900">{location.rating}</span>
+                      {location.reviews && (
+                        <span className="text-slate-500">({location.reviews})</span>
+                      )}
                     </div>
                   )}
                 </div>
@@ -156,21 +188,43 @@ export default function Locations() {
                 <h3 className="text-xl font-heading font-semibold text-slate-900 mb-2">
                   {location.name}
                 </h3>
-                <p className="text-slate-600 mb-4 text-sm">
+                <p className="text-slate-600 mb-4 text-sm leading-relaxed">
                   {location.address}
                 </p>
 
                 {/* Hours */}
-                <div className="flex items-center gap-2 text-sm text-slate-500 mb-4">
+                <div className="flex items-center gap-2 text-sm text-slate-600 mb-3">
                   <Clock className="w-4 h-4 text-emerald-600" />
-                  {location.hours}
+                  <span>{location.hours}</span>
                 </div>
 
                 {/* Distance */}
                 {location.distance && (
-                  <div className="flex items-center gap-2 text-sm text-slate-500 mb-6">
+                  <div className="flex items-center gap-2 text-sm text-slate-600 mb-3">
                     <Navigation className="w-4 h-4" />
-                    {location.distance}
+                    <span>{location.distance}</span>
+                  </div>
+                )}
+
+                {/* Price */}
+                {location.priceRange && (
+                  <div className="flex items-center gap-2 text-sm text-slate-600 mb-4">
+                    <span className="font-semibold text-emerald-600">{location.priceRange}</span>
+                  </div>
+                )}
+
+                {/* Contact Info */}
+                {location.phone && (
+                  <div className="flex items-center gap-2 text-sm text-slate-600 mb-2">
+                    <Phone className="w-4 h-4 text-slate-500" />
+                    <span>{location.phone}</span>
+                  </div>
+                )}
+
+                {location.email && (
+                  <div className="flex items-center gap-2 text-sm text-slate-600 mb-6">
+                    <Mail className="w-4 h-4 text-slate-500" />
+                    <span className="truncate">{location.email}</span>
                   </div>
                 )}
 
@@ -179,12 +233,51 @@ export default function Locations() {
                   onClick={() => handleBookAtLocation(location.deviceId)}
                   className="w-full bg-emerald-600 text-white hover:bg-emerald-700 font-semibold rounded-lg transition-colors"
                 >
-                  {t.locations.bookAtLocation}
+                  Book Now
                 </Button>
               </div>
             </motion.div>
           ))}
         </div>
+
+        {/* Additional Info */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="mt-12 bg-slate-50 border border-slate-200 rounded-2xl p-8"
+        >
+          <div className="grid md:grid-cols-3 gap-8">
+            <div>
+              <h4 className="font-heading font-semibold text-slate-900 mb-2 flex items-center gap-2">
+                <Clock className="w-5 h-5 text-emerald-600" />
+                24/7 Access
+              </h4>
+              <p className="text-sm text-slate-600">
+                Access your luggage any time, day or night. No waiting in lines or queues.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-heading font-semibold text-slate-900 mb-2 flex items-center gap-2">
+                <Shield className="w-5 h-5 text-emerald-600" />
+                Bank-Grade Security
+              </h4>
+              <p className="text-sm text-slate-600">
+                CCTV monitored, secure PIN code access. Your bags are safe with us.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-heading font-semibold text-slate-900 mb-2 flex items-center gap-2">
+                <MapPin className="w-5 h-5 text-emerald-600" />
+                Prime Location
+              </h4>
+              <p className="text-sm text-slate-600">
+                Located in the heart of Le Marais, near Bastille and major attractions.
+              </p>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
