@@ -41,21 +41,17 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className="relative py-24 lg:py-32 bg-slate-50 overflow-hidden text-slate-900">
-      {/* Background Effects */}
-      <div className="absolute inset-0 pattern-circles opacity-20" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-emerald-500/5 rounded-full blur-3xl" />
-
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 lg:py-24 bg-slate-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold mb-4">
-            <span className="text-gradient">{t.testimonials.title}</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-4 text-slate-900">
+            {t.testimonials.title}
           </h2>
         </motion.div>
 
@@ -63,24 +59,24 @@ export default function Testimonials() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
           className="max-w-5xl mx-auto"
         >
           <Carousel className="w-full">
             <CarouselContent>
               {testimonials.map((testimonial, index) => (
                 <CarouselItem key={index}>
-                  <Card className="border-2 border-slate-200 hover:border-emerald-300 transition-all duration-500 glass-card shadow-corporate-lg overflow-hidden bg-white">
+                  <Card className="border border-slate-200 bg-white shadow-sm">
                     <CardContent className="p-8 lg:p-12">
                       <div className="grid md:grid-cols-3 gap-8 items-center">
                         {/* Image Column */}
                         <div className="md:col-span-1">
-                          <div className="relative aspect-square rounded-2xl overflow-hidden group">
+                          <div className="relative aspect-square rounded-xl overflow-hidden">
                             <Image
                               src={testimonial.image}
                               alt={testimonial.author}
                               fill
-                              className="object-cover group-hover:scale-110 transition-transform duration-500"
+                              className="object-cover"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
                             <div className="absolute bottom-4 left-4 right-4">
@@ -95,38 +91,24 @@ export default function Testimonials() {
                         {/* Content Column */}
                         <div className="md:col-span-2 text-center md:text-left">
                           {/* Quote Icon */}
-                          <motion.div
-                            initial={{ scale: 0.9, opacity: 0 }}
-                            whileInView={{ scale: 1, opacity: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: 0.3 }}
-                            className="w-16 h-16 bg-gradient-to-br from-emerald-50 to-teal-50 rounded-full flex items-center justify-center mb-6 mx-auto md:mx-0 border border-emerald-200 shadow-sm"
-                          >
-                            <Quote className="w-8 h-8 text-emerald-600" />
-                          </motion.div>
+                          <div className="w-12 h-12 bg-emerald-50 rounded-full flex items-center justify-center mb-6 mx-auto md:mx-0 border border-emerald-100">
+                            <Quote className="w-6 h-6 text-emerald-600" />
+                          </div>
 
                           {/* Rating Stars */}
                           <div className="flex justify-center md:justify-start gap-1 mb-6">
                             {[...Array(testimonial.rating)].map((_, i) => (
-                              <motion.div
-                                key={i}
-                                initial={{ scale: 0, rotate: -180 }}
-                                whileInView={{ scale: 1, rotate: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.4, delay: 0.4 + i * 0.1 }}
-                              >
-                                <Star className="w-6 h-6 fill-emerald-500 text-emerald-500" />
-                              </motion.div>
+                              <Star key={i} className="w-5 h-5 fill-emerald-500 text-emerald-500" />
                             ))}
                           </div>
 
                           {/* Quote */}
-                          <blockquote className="text-lg lg:text-xl text-slate-700 mb-6 leading-relaxed">
+                          <blockquote className="text-lg text-slate-700 mb-6 leading-relaxed">
                             "{testimonial.quote}"
                           </blockquote>
 
                           {/* Author */}
-                          <p className="font-bold text-emerald-600 text-lg">
+                          <p className="font-semibold text-emerald-600 text-lg">
                             {testimonial.author}
                           </p>
                         </div>
@@ -136,8 +118,8 @@ export default function Testimonials() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="hidden md:flex border-2 border-slate-300 hover:bg-emerald-50 hover:border-emerald-400 transition-all duration-300" />
-            <CarouselNext className="hidden md:flex border-2 border-slate-300 hover:bg-emerald-50 hover:border-emerald-400 transition-all duration-300" />
+            <CarouselPrevious className="hidden md:flex border border-slate-300 hover:bg-slate-50" />
+            <CarouselNext className="hidden md:flex border border-slate-300 hover:bg-slate-50" />
           </Carousel>
         </motion.div>
 
@@ -146,7 +128,7 @@ export default function Testimonials() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
           className="mt-12 flex flex-wrap justify-center gap-8"
         >
           {[
@@ -156,8 +138,7 @@ export default function Testimonials() {
           ].map((item, index) => (
             <motion.div
               key={index}
-              whileHover={{ scale: 1.05 }}
-              className="flex items-center gap-3 px-6 py-3 glass bg-white rounded-full border border-slate-200 shadow-sm"
+              className="flex items-center gap-3 px-6 py-3 bg-white rounded-full border border-slate-200 shadow-sm"
             >
               <span className="text-2xl">{item.icon}</span>
               <span className="font-semibold text-slate-800">{item.label}</span>

@@ -27,7 +27,7 @@ export default function Hero() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-white/90 via-white/85 to-slate-100/85" />
+        <div className="absolute inset-0 bg-gradient-to-br from-white/60 via-white/55 to-slate-100/55" />
       </div>
 
       {/* Subtle Background Pattern */}

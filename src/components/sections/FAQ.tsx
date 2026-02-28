@@ -36,16 +36,16 @@ export default function FAQ() {
   ];
 
   return (
-    <section id="faq" className="py-20 lg:py-32 bg-slate-50">
+    <section id="faq" className="py-20 lg:py-24 bg-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-slate-900 mb-4">
             {t.faq.title}
           </h2>
         </motion.div>
@@ -54,22 +54,22 @@ export default function FAQ() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
         >
           <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, index) => (
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="bg-card border border-border rounded-xl px-6 hover:border-primary/50 transition-all duration-300"
+                className="bg-white border border-slate-200 rounded-xl px-6 hover:border-emerald-300 transition-colors"
               >
                 <AccordionTrigger className="text-left hover:no-underline py-6">
-                  <span className="text-lg font-semibold text-foreground pr-4">
+                  <span className="text-lg font-semibold text-slate-900 pr-4">
                     {faq.question}
                   </span>
                 </AccordionTrigger>
                 <AccordionContent className="pb-6">
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-slate-600 leading-relaxed">
                     {faq.answer}
                   </p>
                 </AccordionContent>

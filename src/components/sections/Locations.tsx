@@ -63,34 +63,30 @@ export default function Locations() {
   };
 
   return (
-    <section id="locations" className="relative py-24 lg:py-32 bg-white overflow-hidden text-slate-900">
-      {/* Background Effects */}
-      <div className="absolute inset-0 pattern-grid opacity-20" />
-      <div className="absolute top-1/4 right-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl" />
-
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="locations" className="py-20 lg:py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold mb-4">
-            <span className="text-gradient">{t.locations.title}</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold mb-4 text-slate-900">
+            {t.locations.title}
           </h2>
           <p className="text-lg text-slate-600">
             {t.locations.subtitle}
           </p>
         </motion.div>
 
-        {/* Map Placeholder with Image */}
+        {/* Featured Location Image */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-12 bg-white border-2 border-slate-200 rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mb-12 bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
         >
           <div className="aspect-video relative">
             <Image
@@ -119,10 +115,10 @@ export default function Locations() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
               className="h-full"
             >
-              <div className="h-full bg-white border-2 border-slate-200 hover:border-emerald-300 transition-all duration-300 hover:shadow-corporate-lg rounded-3xl p-6 overflow-hidden">
+              <div className="h-full bg-white border border-slate-200 hover:border-emerald-300 transition-colors rounded-2xl p-6 shadow-sm hover:shadow-md">
                 {/* Location Image */}
                 {location.image && (
                   <div className="relative aspect-video rounded-xl overflow-hidden mb-4">
@@ -130,7 +126,7 @@ export default function Locations() {
                       src={location.image}
                       alt={location.name}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="object-cover"
                     />
                   </div>
                 )}
@@ -157,7 +153,7 @@ export default function Locations() {
                 </div>
 
                 {/* Location Info */}
-                <h3 className="text-xl font-heading font-bold text-slate-900 mb-2">
+                <h3 className="text-xl font-heading font-semibold text-slate-900 mb-2">
                   {location.name}
                 </h3>
                 <p className="text-slate-600 mb-4 text-sm">
@@ -181,7 +177,7 @@ export default function Locations() {
                 {/* Book Button */}
                 <Button
                   onClick={() => handleBookAtLocation(location.deviceId)}
-                  className="w-full bg-gradient-to-r from-emerald-600 to-teal-500 text-white hover:scale-105 font-bold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl border-2 border-emerald-600/30"
+                  className="w-full bg-emerald-600 text-white hover:bg-emerald-700 font-semibold rounded-lg transition-colors"
                 >
                   {t.locations.bookAtLocation}
                 </Button>

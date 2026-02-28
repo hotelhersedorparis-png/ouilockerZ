@@ -45,7 +45,7 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <div className="relative w-12 h-12">
+            <div className="relative w-36 h-36">
               <Image
                 src="/logo-officiel.png"
                 alt="OuiLockers"
