@@ -13,6 +13,7 @@ import {
 import { useLanguage, Language } from '@/contexts/LanguageContext';
 import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
+import ShareButtons from '@/components/ShareButtons';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -90,6 +91,9 @@ export default function Navigation() {
               </DropdownMenuContent>
             </DropdownMenu>
 
+            {/* Share Button */}
+            <ShareButtons />
+
             {/* CTA Button */}
             <Button
               onClick={() => scrollToSection('locations')}
@@ -160,6 +164,7 @@ export default function Navigation() {
               </div>
 
               {/* CTA Button Mobile */}
+              <ShareButtons />
               <Button
                 onClick={() => scrollToSection('locations')}
                 className="w-full bg-emerald-600 text-white hover:bg-emerald-700 font-semibold shadow-sm hover:shadow-md transition-all duration-200 mt-4"

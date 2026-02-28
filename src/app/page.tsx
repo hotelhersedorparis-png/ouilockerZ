@@ -12,6 +12,9 @@ import FAQ from '@/components/sections/FAQ';
 import CTA from '@/components/sections/CTA';
 import Footer from '@/components/sections/Footer';
 import CallWidget from '@/components/CallWidget';
+import WhatsAppWidget from '@/components/WhatsAppWidget';
+import BackToTop from '@/components/BackToTop';
+import CookieConsent from '@/components/CookieConsent';
 
 export default function Home() {
   return (
@@ -31,6 +34,9 @@ export default function Home() {
       </main>
 
       <Footer />
+      <CookieConsent />
+      <BackToTop />
+      <WhatsAppWidget />
       <CallWidget />
     </div>
   );

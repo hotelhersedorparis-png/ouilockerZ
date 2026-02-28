@@ -248,12 +248,19 @@ export default function Locations() {
               </div>
             </div>
 
-            <Button
-              onClick={() => window.open('https://maps.google.com/?q=20+Rue+Saint-Antoine,+75004+Paris,+France', '_blank')}
-              className="w-full mt-6 bg-slate-900 text-white hover:bg-slate-800 font-semibold py-3 rounded-lg transition-colors"
-            >
-              Open in Google Maps
-            </Button>
+            {/* Google Maps Iframe */}
+            <div className="mt-6 rounded-xl overflow-hidden border border-slate-200">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.1248657!2d2.3652!3d48.8534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDjCsDUxJzEyLjIiTiAywrAyMSczMC43IkU!5e0!3m2!1sfr!2sfr!4v1234567890!5m2!1sfr!2sfr"
+                width="100%"
+                height="300"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full"
+              />
+            </div>
           </div>
 
           {/* Nearby Transport */}
